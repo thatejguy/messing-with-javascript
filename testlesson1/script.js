@@ -18,9 +18,9 @@ if (guess === 'heads') {
 
 console.log(result);*/
 
-function calculateTax(cost) {
-  console.log(cost * 0.1);
+function calculateTax(cost, taxPercent = 0.1) {
+  console.log(cost * taxPercent);
 }
 
-calculateTax(2000);
+calculateTax(2000, 0.2);
 calculateTax(5000);

@@ -2,6 +2,12 @@ const rockButton = document.querySelector('.rockbutton');
 const paperButton = document.querySelector('.paperbutton');
 const scissorsButton = document.querySelector('.scissorsbutton');
 
+const score = {
+  wins: 0,
+  losses: 0,
+  ties: 0
+}
+
 rockButton.addEventListener('click', () => {
   playGame('rock');
 });
@@ -55,14 +61,23 @@ function playGame(playerMove) {
 
   } else if (playerMove === 'rock') {
     if (computerMove === 'rock') {
-      result = 'Tie!';
+      result = 'You tie!';
     } else if (computerMove === 'paper') {
       result = 'You lose!';
     } else if (computerMove === 'scissors') {
       result = 'You win!';
     }
   }
+
+  if (result === 'You win!') {
+    score.wins += 1;
+  } else if (result === 'You lose!') {
+    score.losses += 1;
+  } else if (result === 'You tie!') {
+    score.ties += 1;
+  }
   
 
-  alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
+alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}.`);
 }
