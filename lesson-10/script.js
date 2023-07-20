@@ -1,12 +1,15 @@
 const rockButton = document.querySelector('.rockbutton');
 const paperButton = document.querySelector('.paperbutton');
 const scissorsButton = document.querySelector('.scissorsbutton');
+const resetButton = document.querySelector('.resetbutton');
 
 const score = {
   wins: 0,
   losses: 0,
   ties: 0
-}
+};
+
+console.log(JSON.parse(localStorage.getItem('score')));
 
 rockButton.addEventListener('click', () => {
   playGame('rock');
@@ -19,6 +22,12 @@ paperButton.addEventListener('click', () => {
 scissorsButton.addEventListener('click', () => {
   playGame('scissors');
 });
+
+resetButton.addEventListener('click', () => {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+})
 
 
 function pickComputerMove() {
@@ -76,7 +85,8 @@ function playGame(playerMove) {
   } else if (result === 'You tie!') {
     score.ties += 1;
   }
-  
+
+  localStorage.setItem('score', JSON.stringify(score));
 
 alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
 Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}.`);
