@@ -3,8 +3,9 @@ const paperButton = document.querySelector('.paperbutton');
 const scissorsButton = document.querySelector('.scissorsbutton');
 const resetButton = document.querySelector('.resetbutton');
 
-let score = JSON.parse(localStorage.getItem('score'));
+let score = JSON.parse(localStorage.getItem('score')) || {wins: 0, losses: 0, ties: 0};
 
+/*
 if (!score) {
   score = {
     wins: 0,
@@ -12,6 +13,7 @@ if (!score) {
     ties: 0
   };
 }
+*/
 
 rockButton.addEventListener('click', () => {
   playGame('rock');
