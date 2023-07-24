@@ -83,8 +83,14 @@ const object5 = {
     for (let i = 0; i <= 20; i++) {
       console.log(i);
     }
-  }
-};
+  },
+  grease() {
+    let my_array = [56, 79, 45, 34]
+    my_array.forEach(item => {
+      console.log(item);
+    })
+}}
 console.log(object5);
 object5.method();
+object5.grease();
 
