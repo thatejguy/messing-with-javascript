@@ -80,7 +80,7 @@ const object5 = {
   // console.log('method');
   //}
   method() {
-    for (let i = 0; i <= 20; i++) {
+    for (let i = 0; i <= 5; i++) {
       console.log(i);
     }
   },
