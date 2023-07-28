@@ -1,5 +1,10 @@
 //subscribe button
 const subscribeButton = document.querySelector('.subscribebutton');
+
 subscribeButton.addEventListener('click', () => {
-  subscribeButton.textContent = 'Subscribed';
+  if (subscribeButton.textContent === 'Subscribe') {
+    subscribeButton.textContent = 'Subscribed';
+  } else {
+    subscribeButton.textContent = 'Subscribe';
+  }
 });
