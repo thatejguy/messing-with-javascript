@@ -1,4 +1,5 @@
 //subscribe button
+function subscribe() {
 const subscribeButton = document.querySelector('.subscribebutton');
 
 subscribeButton.addEventListener('click', () => {
@@ -8,3 +9,6 @@ subscribeButton.addEventListener('click', () => {
     subscribeButton.textContent = 'Subscribe';
   }
 });
+}
+
+subscribe();
