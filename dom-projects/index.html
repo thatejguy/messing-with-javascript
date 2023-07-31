@@ -21,11 +21,31 @@
     Amazon Shipping Calculator
   </p>
 
-  <input class="input" placeholder="Cost of order">
+  <input class="input" placeholder="Cost of order" onkeydown="
+    console.log(event.key);
+    if (event.key === 'Enter') {
+      const inputElement = document.querySelector('.input');
+      let cost = Number(inputElement.value);
+      console.log(cost);
+      console.log(typeof cost);
+
+      if (cost < 40) {
+       cost = cost + 10;
+      console.log(cost);
+      }
+
+  document.querySelector('.js-total-cost')
+    .innerHTML = `$${cost}`;
+    }
+  ">
 
   <button class="calculatebutton">
     Calculate
   </button>
+
+  <p class="js-total-cost">
+
+  </p>
 
 </body>
 </html>

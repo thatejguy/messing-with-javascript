@@ -21,6 +21,16 @@ calculateButton.addEventListener('click', () => {
 
 function calculateTotal() {
   const inputElement = document.querySelector('.input');
-  console.log(inputElement.value);
+  let cost = Number(inputElement.value);
+  console.log(cost);
+  console.log(typeof cost);
+
+  if (cost < 40) {
+    cost = cost + 10;
+    console.log(cost);
+  }
+
+  document.querySelector('.js-total-cost')
+    .innerHTML = `$${cost}`;
 }
 
