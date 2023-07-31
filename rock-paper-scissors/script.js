@@ -32,6 +32,7 @@ resetButton.addEventListener('click', () => {
   score.losses = 0;
   score.ties = 0;
   localStorage.removeItem('score');
+  updateScoreElement();
 })
 
 
@@ -93,9 +94,17 @@ function playGame(playerMove) {
 
   localStorage.setItem('score', JSON.stringify(score));
 
-alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}.`);
+  updateScoreElement();
+
+  document.querySelector('.js-result').innerHTML = result;
+
+  document.querySelector('.js-moves').innerHTML = 
+  `You ${playerMove} - ${computerMove} Computer`;
 }
 
-document.querySelector('.js-score')
-.innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+updateScoreElement();
+
+function updateScoreElement() {
+  document.querySelector('.js-score')
+  .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+}
