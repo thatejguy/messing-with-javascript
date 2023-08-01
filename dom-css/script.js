@@ -5,6 +5,7 @@ function subscribe() {
   subscribeButton.addEventListener('click', () => {
     if (subscribeButton.textContent === 'Subscribe') {
     subscribeButton.textContent = 'Subscribed';
+    subscribeButton.classList.add('.subscribed');
     } else {
     subscribeButton.textContent = 'Subscribe';
     }
